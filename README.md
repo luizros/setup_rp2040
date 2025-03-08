@@ -37,23 +37,20 @@ source ~/.bashrc
 
 ## 🚀 Criando um Novo Projeto  
 
-Para criar um novo projeto, utilize os seguintes comandos:  
+Para criar um novo projeto, execute o seguinte comando:
 
 ```bash
 cd ~
-setup_pico nome_do_projeto tipo
+setup_pico -n project_cpp -t cpp
 ```
-
-No lugar de tipo, coloque `c` para C ou `cpp` para C++.
-
-Isso criará a estrutura de diretórios necessária para o desenvolvimento.  
+Onde -n é o nome do projeto e -t é o tipo de projeto (cpp ou c). Isso criará a estrutura de diretórios necessária para o desenvolvimento.  
 
 ## 🔧 Compilando o Projeto  
 
 Primeiro, certifique-se de estar na pasta do projeto. Em seguida, coloque a placa na porta USB no modo bootsel e execute os seguintes comandos:
 
 ```bash
-cd nome_do_projeto
+cd project_cpp
 compile_pico
 ```
 

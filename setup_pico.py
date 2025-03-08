@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os
 import sys
+import argparse
 
 def criar_estrutura(nome_projeto, type_project):
     if not nome_projeto:
@@ -79,11 +80,19 @@ int main() {
     print(f"✅ Estrutura do projeto '{nome_projeto}' criada com sucesso!")
 
 if __name__ == "__main__":
-    if len(sys.argv) < 3:
-        print("Uso: setup_project.py <nome_do_projeto> <tipo>")
-        sys.exit(1)
+    parser = argparse.ArgumentParser(description="Script para criar a estrutura de um projeto para o Raspberry Pi Pico.")
+    parser.add_argument("-n", "--nome", type=str, help="Nome do projeto")
+    parser.add_argument("-t", "--tipo", type=str, choices=["c", "cpp"], help="Tipo do projeto (c ou cpp)")
+    parser.add_argument("nome_projeto", nargs="?", type=str, help="Nome do projeto (argumento posicional)")
+    parser.add_argument("type_project", nargs="?", type=str, choices=["c", "cpp"], help="Tipo do projeto (c ou cpp, argumento posicional)")
 
-    nome_projeto = sys.argv[1]
-    type_project = sys.argv[2]
+    args = parser.parse_args()
+
+    nome_projeto = args.nome or args.nome_projeto
+    type_project = args.tipo or args.type_project
+
+    if not nome_projeto or not type_project:
+        parser.print_help()
+        sys.exit(1)
 
     criar_estrutura(nome_projeto, type_project)
