@@ -10,6 +10,14 @@ Antes de começar, garanta que o script tenha permissão de execução:
 chmod +x run.sh
 ```
 
+## Prepando o Ambiente
+
+Para preparar o ambiente, execute o seguinte comando:
+
+```bash
+./run.sh
+```
+
 ## 🚀 Criando um Novo Projeto  
 
 Para criar um novo projeto, utilize o seguinte comando:  
@@ -17,6 +25,7 @@ Para criar um novo projeto, utilize o seguinte comando:
 ```bash
 setup_pico nome_do_projeto tipo
 ```
+
 No lugar de tipo, coloque `c` para C ou `cpp` para C++.
 
 Isso criará a estrutura de diretórios necessária para o desenvolvimento.  
@@ -32,12 +41,11 @@ compile_pico
 
 Isso irá compilar o projeto e gerar o arquivo `.uf2` necessário para upload na **Raspberry Pi Pico**.
 
-
 ## 📂 Estrutura do Projeto  
 
 Após a criação do projeto, a estrutura de diretórios será semelhante a esta:  
 
-```
+```bash
 nome_do_projeto/
 │── build/
 │── src/
@@ -49,4 +57,4 @@ nome_do_projeto/
 ## 📝 Observações  
 
 - O script `setup_pico` cria a estrutura base do projeto.  
-- O comando `compile_pico` compila e gera o arquivo `.uf2` para upload na Pico.  
+- O comando `compile_pico` compila e gera o arquivo `.uf2` e faz upload automático na Pico caso ela esteja conectada no modo bootsel.  
