@@ -2,7 +2,16 @@
 
 Este repositório auxilia na configuração do ambiente de desenvolvimento para projetos utilizando a **Raspberry Pi Pico RP2040**.
 
+
 ## 📌 Instalação  
+
+Para começar, clone este repositório e navegue até o diretório:
+
+```bash
+cd ~
+git clone https://github.com/luizros/setup_rp2040
+cd setup_rp2040
+```
 
 Antes de começar, garanta que o script tenha permissão de execução:  
 
@@ -18,11 +27,20 @@ Para preparar o ambiente, execute o seguinte comando:
 ./run.sh
 ```
 
-## 🚀 Criando um Novo Projeto  
+## Atualizar o bashrc
 
-Para criar um novo projeto, utilize o seguinte comando:  
+Para atualizar o arquivo .bashrc, execute o seguinte comando:
 
 ```bash
+source ~/.bashrc
+```
+
+## 🚀 Criando um Novo Projeto  
+
+Para criar um novo projeto, utilize os seguintes comandos:  
+
+```bash
+cd ~
 setup_pico nome_do_projeto tipo
 ```
 
