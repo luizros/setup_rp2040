@@ -15,21 +15,23 @@ chmod +x run.sh
 Para criar um novo projeto, utilize o seguinte comando:  
 
 ```bash
-setup_pico nome_do_projeto
+setup_pico nome_do_projeto tipo
 ```
+No lugar de tipo, coloque `c` para C ou `cpp` para C++.
 
 Isso criará a estrutura de diretórios necessária para o desenvolvimento.  
 
 ## 🔧 Compilando o Projeto  
 
-Após criar o projeto, navegue até a pasta `src/`, crie um arquivo `main.c` ou `main.cpp` e, em seguida, compile com:  
+Primeiro, certifique-se de estar na pasta do projeto. Em seguida, coloque a placa na porta USB no modo bootsel e execute os seguintes comandos:
 
 ```bash
 cd nome_do_projeto
 compile_pico
 ```
 
-Isso irá compilar e preparar o firmware para ser gravado na **Raspberry Pi Pico**.
+Isso irá compilar o projeto e gerar o arquivo `.uf2` necessário para upload na **Raspberry Pi Pico**.
+
 
 ## 📂 Estrutura do Projeto  
 
@@ -48,4 +50,3 @@ nome_do_projeto/
 
 - O script `setup_pico` cria a estrutura base do projeto.  
 - O comando `compile_pico` compila e gera o arquivo `.uf2` para upload na Pico.  
-
