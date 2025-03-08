@@ -31,8 +31,8 @@ target_link_libraries({nome_projeto} pico_stdlib)
 pico_add_extra_outputs({nome_projeto})
 
 # Habilita USB para saída padrão (printf)
-pico_enable_stdio_usb(led 1)
-pico_enable_stdio_uart(led 0) # Opcional: Desativa a saída pela UART
+pico_enable_stdio_usb({nome_projeto} 1)
+pico_enable_stdio_uart({nome_projeto} 0) # Opcional: Desativa a saída pela UART
 """
 
     with open(f"{nome_projeto}/CMakeLists.txt", "w") as f:
